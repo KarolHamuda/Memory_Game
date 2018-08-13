@@ -6,10 +6,6 @@ const deck = document.querySelectorAll('.deck');
 let saveCardName = [];
 let saveCardID = [];
 
-  
-  
-
-
  const matchCard = (checkCard, i) => {
 	 			if (checkCard[i].parentElement.className === 'card') {
 					checkCard[i].parentElement.className = 'card open show';
