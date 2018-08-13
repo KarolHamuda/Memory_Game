@@ -6,6 +6,8 @@ const deck = document.querySelectorAll('.deck');
 let saveCardName = [];
 let saveCardID = [];
 
+  
+  
 
 
  const matchCard = (checkCard, i) => {
