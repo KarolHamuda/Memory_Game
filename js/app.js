@@ -82,5 +82,5 @@ restartGame.addEventListener("click", function() {
 	count=0;
 	totalMoves.innerHTML = count;
 	saveCardName = [];
-
+	createElements();
 });
