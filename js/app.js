@@ -2,9 +2,21 @@ let count = 0;
 const totalMoves = document.querySelector('.moves');
 const restartGame = document.querySelector('.restart');
 const checkCard = document.querySelectorAll('.deck li i', '.card');
-const deck = document.querySelectorAll('.deck');
 let saveCardName = [];
 let saveCardID = [];
+
+const createElements = () => {
+	for (let i=0; i<16; i++){
+		saveCardID.push(checkCard[i].className);
+		console.log(checkCard[i]);
+	}
+	shuffle(saveCardID);
+
+	for (let i=0; i<16; i++){
+		checkCard[i].className = saveCardID[i];
+	}
+}
+createElements();
 
  const matchCard = (checkCard, i) => {
 	 if (checkCard[i].parentElement.className === 'card') {
@@ -57,6 +69,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 
 for (let i=0; i<16; i++) { 
+
 	const myListener = () => matchCard(checkCard, i)
 	const cardElement = checkCard[i].parentElement;
 	cardElement.addEventListener("click", myListener, true);
@@ -65,8 +78,9 @@ for (let i=0; i<16; i++) {
 restartGame.addEventListener("click", function() { 
 	for (let i=0; i<16; i++) { 
 		checkCard[i].parentElement.className = 'card';
-		count=0;
-		totalMoves.innerHTML = count;
-		saveCardName = [];
-	}
+		}
+	count=0;
+	totalMoves.innerHTML = count;
+	saveCardName = [];
+
 });
