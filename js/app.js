@@ -7,35 +7,34 @@ let saveCardName = [];
 let saveCardID = [];
 
  const matchCard = (checkCard, i) => {
-	 			if (checkCard[i].parentElement.className === 'card') {
-					checkCard[i].parentElement.className = 'card open show';
-			}
-			saveCardName.push(checkCard[i].className);
+	 if (checkCard[i].parentElement.className === 'card') {
+		checkCard[i].parentElement.className = 'card open show';
+	}
+	saveCardName.push(checkCard[i].className);
 			
-			if (saveCardName[0]===saveCardName[1]) {
-				for (let j=0; j<16; j++){
-					
-					if (checkCard[j].className === saveCardName[1])
-						if (checkCard[j].parentElement.className === 'card open show'){
-							checkCard[j].parentElement.className = 'card match';
-						}
-				}
-				saveCardName = [];
-				count++;
-				totalMoves.innerHTML = count;
-			}
+	if (saveCardName[0]===saveCardName[1]) {
+		for (let j=0; j<16; j++){
+			if (checkCard[j].className === saveCardName[1])
+				checkCard[j].parentElement.className = 'card match';
+						
+		}
+	saveCardName = [];
+	count++;
+	totalMoves.innerHTML = count;
+	}
 			
-			else if (saveCardName[0]!==saveCardName[1] & saveCardName.length>=2){ 
-				setTimeout(function () {
-				for (let j=0; j<16; j++){
-					if (checkCard[j].parentElement.className !== 'card match'){
+	else if (saveCardName[0]!==saveCardName[1] & saveCardName.length>=2){ 
+		setTimeout(function () {
+			for (let j=0; j<16; j++){
+				if (checkCard[j].parentElement.className !== 'card match'){
 						checkCard[j].parentElement.className = 'card';	
-					}
-				}},270)
-				saveCardName = [];
-				count++;
-				totalMoves.innerHTML = count;
+				}
 			}
+		},270)
+	saveCardName = [];
+	count++;
+	totalMoves.innerHTML = count;
+	}
  }
  
  function shuffle(array) {
@@ -51,7 +50,6 @@ let saveCardID = [];
 
     return array;
 }
- 
 
 //Event Listeners
 document.addEventListener("DOMContentLoaded", function(event) {
