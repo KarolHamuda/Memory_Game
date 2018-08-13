@@ -2,14 +2,12 @@ let count = 0;
 const totalMoves = document.querySelector('.moves');
 const restartGame = document.querySelector('.restart');
 const checkCard = document.querySelectorAll('.deck li i', '.card');
-const deck = document.querySelectorAll('.deck li i');
+const deck = document.querySelectorAll('.deck');
 let saveCardName = [];
 let saveCardID = [];
 
 
-for (let i=deck.children.length; i>=0; i--) {
-	deck.appendChild(deck.children[shuffle(deck)]);
-}
+
 
  const matchCard = (checkCard, i) => {
 	 			if (checkCard[i].parentElement.className === 'card') {
