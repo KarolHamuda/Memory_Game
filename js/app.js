@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 for (let i=0; i<16; i++) { 
 	const myListener = () => matchCard(checkCard, i)
-	const childElement = checkCard[i].parentElement;
-	childElement.addEventListener("click", myListener, true);
+	const cardElement = checkCard[i].parentElement;
+	cardElement.addEventListener("click", myListener, true);
 }
 
 restartGame.addEventListener("click", function() { 
