@@ -18,8 +18,8 @@ const createElements = () => {
 }
 createElements();
 
- const matchCard = (checkCard, i) => {
-	 if (checkCard[i].parentElement.className === 'card') {
+const matchCard = (checkCard, i) => {
+	if (checkCard[i].parentElement.className === 'card') {
 		checkCard[i].parentElement.className = 'card open show';
 	}
 	saveCardName.push(checkCard[i].className);
@@ -47,9 +47,9 @@ createElements();
 	count++;
 	totalMoves.innerHTML = count;
 	}
- }
+}
  
- function shuffle(array) {
+function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
