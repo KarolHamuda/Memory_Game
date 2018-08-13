@@ -75,11 +75,15 @@ for (let i=0; i<16; i++) {
 	cardElement.addEventListener("click", myListener, true);
 }
 
-restartGame.addEventListener("click", function() { 
-	for (let i=0; i<16; i++) { 
-		checkCard[i].parentElement.className = 'card';
-		}
-	count=0;
-	totalMoves.innerHTML = count;
-	saveCardName = [];
+restartGame.addEventListener("click", function() {
+saveCardName = [];
+saveCardID = [];
+for (let i = 0; i < 16; i++) {
+	checkCard[i].parentElement.className = 'card';
+}
+createElements();
+
+count = 0;
+totalMoves.innerHTML = count;
+
 });
