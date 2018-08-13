@@ -7,8 +7,16 @@ let saveCardName = [];
 let saveCardID = [];
 
 
+<<<<<<< HEAD
 
 
+||||||| merged common ancestors
+for (let i=deck.children.length; i>=0; i--) {
+	deck.appendChild(deck.children[shuffle(deck)]);
+}
+
+=======
+>>>>>>> e3a0eb394d2637da566e13b7770347e7743bac1e
  const matchCard = (checkCard, i) => {
 	 			if (checkCard[i].parentElement.className === 'card') {
 					checkCard[i].parentElement.className = 'card open show';
